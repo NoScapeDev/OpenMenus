@@ -1,0 +1,9 @@
+net\devscape\project\openmenus\manager\InputMenu.class
+net\devscape\project\openmenus\handlers\iListener.class
+net\devscape\project\openmenus\handlers\iUtils.class
+net\devscape\project\openmenus\OpenMenus.class
+net\devscape\project\openmenus\utils\iMessage.class
+net\devscape\project\openmenus\listeners\CommandListener.class
+net\devscape\project\openmenus\commands\iCommands.class
+net\devscape\project\openmenus\handlers\iMenu.class
+net\devscape\project\openmenus\manager\IndexManager.class

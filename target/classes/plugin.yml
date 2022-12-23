@@ -1,0 +1,10 @@
+name: OpenMenus
+version: '1.0'
+main: net.devscape.project.openmenus.OpenMenus
+api-version: 1.13
+authors: [DevScape]
+
+commands:
+  openmenus:
+    aliases: [openmenu, opm, omenu, om]
+    description: main openmenus base command.

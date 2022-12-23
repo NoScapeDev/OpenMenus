@@ -1,0 +1,103 @@
+# ====================================open-command-gui-name===============================
+# General plugin settings
+# - turn off certain features/edit stuff.
+# ====================================================================
+settings:
+  open-command-gui-name: true # allow /<gui> as a command to be used.
+  disabled-worlds:
+    - 'example_world'
+
+# ===================================================================
+# Custom GUI Menus
+# - gui menus can be executed with one string name command, with a ton of
+# customization you can do like; actions/item editing/sizes etc.
+#
+# - all strings support 1.16+ hex colors with '&#123456'
+# - placeholderapi support.
+# - all commands are executed in console.
+# ====================================================================
+guis:
+  # ======================================================================
+  # BASIC MENU EXAMPLE
+  # ======================================================================
+  basicgui: # the command to open the gui; /basicgui
+    name: '              &8&nBasic Gui' # the menu name at the top.
+    slots: 9 # how many slots the gui should be, 9/18/27/45/54
+    open-permission:
+      enable: true
+      permission: om.menu.basicgui
+      message: '&cYou don''t have access to open this menu!'
+    filler: # fill all empty slots with glass or anymore material
+      enable: true
+      material: GRAY_STAINED_GLASS_PANE
+      displayname: '&8' # this will make the glass have a blank name
+    items: # items that will be displayed in the menu.
+      stone:
+        material: STONE
+        displayname: '&7&lStone Block'
+        slot: 3
+        lore:
+          - ''
+          - '&8» &bSupports Right/Left Click Command Actions.'
+          - '&8» &cAll commands are executed through console.'
+          - '&8» &eSupports Placeholderapi.'
+          - ''
+        action:
+          left-click:
+            commands:
+              - say %player% clicked this item!
+            message:
+              - '&8&l» &bYou have just left clicked this item!'
+          right-click:
+            commands:
+              - say %player% clicked this item!
+            message:
+              - '&8&l» &bYou have just right clicked this item!'
+      grass:
+        material: GRASS_BLOCK
+        displayname: '&a&lGrass Block'
+        slot: 5
+        lore:
+          - ''
+          - '&8» &bSupports Right/Left Click Command Actions.'
+          - '&8» &cAll commands are executed through console.'
+          - '&8» &eSupports Placeholderapi.'
+          - ''
+        action:
+          left-click:
+            commands:
+              - say %player% clicked this item!
+            message:
+              - '&8&l» &bYou have just left clicked this item!'
+          right-click:
+            commands:
+              - say %player% clicked this item!
+            message:
+              - '&8&l» &bYou have just right clicked this item!'
+  # ======================================================================
+  # STATS MENU EXAMPLE - uses placeholderapi '/papi ecloud download Statistic'
+  # ======================================================================
+  stats: # the command to open the gui; /stats
+    name: '            &8&nProfile Stats' # the menu name at the top.
+    slots: 27 # how many slots the gui should be, 9/18/27/45/54
+    open-permission:
+      enable: false
+      permission: om.menu.stats
+      message: '&cYou don''t have access to open this menu!'
+    filler: # fill all empty slots with glass or anymore material
+      enable: true
+      material: GRAY_STAINED_GLASS_PANE
+      displayname: '&8' # this will make the glass have a blank name
+    items: # items that will be displayed in the menu.
+      kills:
+        material: DIAMOND_SWORD
+        displayname: '&6Kills &f%statistic_player_kills%'
+        slot: 11
+      deaths:
+        material: SKELETON_SKULL
+        displayname: '&6Deaths &f%statistic_deaths%'
+        slot: 13
+      hoursplayed:
+        material: CLOCK
+        displayname: '&6Hours Played &f%statistic_time_played:hours%'
+        slot: 15
